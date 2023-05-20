@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 dotenv.config({ path: __dirname + "/../.env" });
 
 const app = express();
-const port = process.env["PORT "] || 2000;
+const port = process.env["PORT"] || 2000;
 const mongodbUrl = process.env["MONGODB_URI"];
 // check if the env is set, remember to delete this
 console.log(process.env[`MONGODB_URI`]);

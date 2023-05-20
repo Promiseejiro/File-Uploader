@@ -10,7 +10,7 @@ const db_1 = __importDefault(require("./db/db"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config({ path: __dirname + "/../.env" });
 const app = (0, express_1.default)();
-const port = process.env["PORT "] || 2000;
+const port = process.env["PORT"] || 2000;
 const mongodbUrl = process.env["MONGODB_URI"];
 // check if the env is set, remember to delete this
 console.log(process.env[`MONGODB_URI`]);
