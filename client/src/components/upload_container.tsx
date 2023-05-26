@@ -19,7 +19,7 @@ function Upload_Container({ onChangeHandler }: changeFunc) {
   return (
     <div
       className="w-full"
-      onDragEnter={handleDragStart}
+     onDragEnter={handleDragStart}
       onDragLeave={handleDragEnd}
     >
       <Header title="Upload your image" />

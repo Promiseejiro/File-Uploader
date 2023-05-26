@@ -80,7 +80,7 @@ const Container = () => {
     setCurrentState({ ...currentState, title: "Copied" });
   };
   return (
-    <div className="main_container bg-white m-4 p-6 rounded">
+    <div className="main_container bg-white my-auto  p-6 rounded">
       {currentState.choseFile && (
         <Upload_Container onChangeHandler={onChangeHandler} />
       )}
