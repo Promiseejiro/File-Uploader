@@ -1,18 +1,24 @@
 import React from "react";
-import Header from "./components/header";
 import "./App.css";
-import Container from "./components/container";
+import Register from "./pages/register";
+import axios from "axios"
 function App() {
-
+  
+  const check=async()=>{
+    try{
+       axios.get("http://localhost:2000/auth/google");
+    } catch(err){
+      alert(err)
+    }
+  }
   return (
     <div
-      className="App bg-[#f4f4f4]  h-screen w-full flex items-center flex-col"
-    >
-    <Container />
-    <div className="bg-blue-500 py-1 flex flex-col items-center justify-center w-full"><Header title="By Promise"></Header>
-    <a href="https://github.com/Promiseejiro/File-Uploader" className="bg-[#fff] p-1 text-blue-500 rounded">Git repo</a>
-    </div>
-
+      className="App bg-[#f4f4f4]  h-screen w-full">
+  <Register/>
+  <a href="http://localhost:2000/auth/google" >Google</a>
+  <a href="http://localhost:2000/auth/github" >Github</a>
+  <a href="http://localhost:2000/auth/facebook" >Facebook</a>
+  <a href="http://localhost:2000/auth/twitter" >Twitter</a>
     </div>
   );
 }
