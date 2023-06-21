@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Header from "./header";
 import Btn from "./btn";
 
@@ -6,10 +6,9 @@ interface changeFunc {
   onChangeHandler: any;
 }
 function Upload_Container({ onChangeHandler }: changeFunc) {
-  const handleDragStart = (e: any) => {
-    e.preventDefault();
-    e.stopPropagation();
-  };
+  const containerRef = useRef(null);
+
+  const handleDragStart = (e: any) => {};
 
   const handleDragEnd = (e: any) => {
     e.preventDefault();
@@ -21,12 +20,13 @@ function Upload_Container({ onChangeHandler }: changeFunc) {
       className="w-full "
       onDragEnter={handleDragStart}
       onDragLeave={handleDragEnd}
+      ref={containerRef}
     >
       <Header title="Upload your image" />
       <p className="text-center my-4 font-[300] text-[12px]">
         File should be jpeg,jpg or png...
       </p>
-      <div className="full w-full border-2 border-dashed border-blue-700 rounded bg-[#f7f8fc] p-4 relative" >
+      <div className="full w-full border-2 border-dashed border-blue-700 rounded bg-[#f7f8fc] p-4 relative">
         <div className="flex justify-center">
           <div>
             <img
