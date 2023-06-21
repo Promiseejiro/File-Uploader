@@ -7,8 +7,8 @@ function App() {
     <div
       className="App bg-[#f4f4f4] px-4 h-screen flex items-center"
     >
-      {/* <Container /> */}
-      <Resizer/>
+      <Container />
+      {/* <Resizer/> */}
     </div>
   );
 }
