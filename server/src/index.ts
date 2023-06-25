@@ -1,16 +1,19 @@
 import express from "express";
+//import router from "./route/route";
 import cors from "cors";
-import router from "./route/routes";
-import connectDb from "./db/db";
-import dotenv from "dotenv";
-dotenv.config();
-const port = process.env["PORT"] || 8000;
-const MONGU_URL = process.env["MONGU_URL"];
+import bodyParser from "body-parser";
+import connectDb from "./db/index";
+const port = 7000;
 const app = express();
-//medewares
+
+//middleware
 app.use(cors());
-app.use("/", router);
-app.listen(port, (): void => {
-  connectDb(MONGU_URL);
-  console.log("app is listenig on port 2000");
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.get("/",(req: express.Reques,res: express.Response)=>{
+  res.send({message:"working"})
+})
+app.listen(port, () => {
+  connectDb('mongodb+srv://my-unsplash:4128@cluster0.zr1pucn.mongodb.net/');
+  console.log(`server is listening on port ${port}`);
 });
