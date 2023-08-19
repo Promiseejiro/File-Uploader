@@ -12,5 +12,5 @@ app.use(cors());
 app.use("/", router);
 app.listen(port, (): void => {
   connectDb(MONGU_URL);
-  console.log("app is listenig on port 2000");
+  console.log("app is listenig on port 8000");
 });
